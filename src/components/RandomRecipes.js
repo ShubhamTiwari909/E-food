@@ -5,10 +5,10 @@ import './Waaducss.css'
 function Headlines() {
     const [headlines, setHeadlines] = useState([]);
     useEffect(() => {
-        axios.get("https://api.spoonacular.com/recipes/complexSearch?query=pasta&addRecipeInformation=true&number=2&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0")
+        axios.get("https://api.spoonacular.com/recipes/random?number=100&addRecipeNutrition=true&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0")
             .then(response => {
-                setHeadlines(response.data.results)
-                console.log(response.data.results)
+                setHeadlines(response.data.recipes)
+                console.log(response.data.recipes)
             })
             .catch(err => console.log(err));
 

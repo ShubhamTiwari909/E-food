@@ -3,6 +3,7 @@ import './Waaducss.css'
 function Data(props) {
     const [summaryButton, setSummaryButton] = useState(false)
     const [stepsButton, setStepsButton] = useState(false);
+    const [ingredientButton, setIngredientButton] = useState(false)
 
     return (
         <div>
@@ -16,18 +17,19 @@ function Data(props) {
                                 <div className="text-gray-700">
                                     <h2 className="font-bold mb-2 text-md lg:text-lg">Dish Type</h2>
                                     <div className="flex space-x-4">
-                                        {result.dishTypes.map(type => {
+                                        {result.dishTypes.map((type,index) => {
                                             return (
-                                                <div>
+                                                <div key={index}>
                                                     {type}
                                                 </div>
                                             )
                                         })}
                                     </div>
-                                    <div className={`text-slate-800 my-3`}>
-                                        <h1 className="text-md lg:text-md text-slate-800 mt-4 mb-2 font-bold"
-                                            onClick={() => setSummaryButton(!summaryButton)}>Summary</h1>
-                                        <p dangerouslySetInnerHTML={{ __html: result.summary }}
+                                    <div className={`text-slate-800 mt-5`} key={result.id}>
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                            onClick={() => setSummaryButton(!summaryButton)} >Summary</button>
+                                        <p className="text-xs lg:text-sm"
+                                        dangerouslySetInnerHTML={{ __html: result.summary }}
                                             style={{ display: summaryButton ? "block" : "none" }}
                                         ></p>
                                     </div>
@@ -35,17 +37,38 @@ function Data(props) {
                             </div>
 
                             <div className="px-6 py-4 my-2">
-                                <h1 className="text-md lg:text-md text-slate-800 mt-4 mb-2 font-bold"
-                                 onClick={() => setStepsButton(!stepsButton)}>Steps</h1>
-                                {result.analyzedInstructions[0].steps.map(item => {
+                                <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                 onClick={() => setStepsButton(!stepsButton)} key={result.id}>Steps</button>
+                                {result.analyzedInstructions.length > 0 ? result.analyzedInstructions[0].steps?.map((item,index) => {
                                     return (
-                                        <div className="text-sm lg:text-md">
+                                        <div className="text-sm lg:text-md" key={index}>
                                             <p className="my-1 text-sm text-stone-800"
                                                 style={{ display: stepsButton ? "block" : "none" }}
                                             >Step {item.number} - {item.step}</p>
                                         </div>
                                     )
-                                })}
+                                })
+                            :
+                            <p>No steps are there</p>}
+                            </div>
+
+                            <div className="px-6 py-4 my-2">
+                                <button className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                 onClick={() => setIngredientButton(!ingredientButton)} key={result.id}>Ingredients</button>
+                                {result.extendedIngredients.length > 0 ? result.extendedIngredients?.map((item,index) => {
+                                    return (
+                                        <div className="text-sm lg:text-md" key={index}>
+                                            <div className="my-1 text-sm text-stone-800"
+                                                style={{ display: ingredientButton ? "block" : "none" }}
+                                            >
+                                                <p>Ingredient - {item.name}</p>
+                                                <p>Instructions - {item.original}</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            :
+                            <p>No ingredients are there</p>}
                             </div>
                             <div className="self-end mt-5">
                                 <div className="px-6 py-4 bg-slate-900 rounded-md text-slate-200 text-sm">

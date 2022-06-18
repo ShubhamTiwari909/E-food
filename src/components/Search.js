@@ -13,10 +13,10 @@ function Search() {
     }
     const searchNews = () => {
         setTopic(search)
-        axios.get(`https://newsapi.org/v2/everything?q=${topic}&pageSize=100&apiKey=d8ed80a139314f978fa03379413393d4`)
+        axios.get(`https://api.spoonacular.com/recipes/random?query=${topic}&addRecipeInformation=true&addRecipeNutrition=true&number=100&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0`)
             .then(response => {
-                setNewsData(response.data.articles)
-                // console.log(response)
+                setNewsData(response.data.recipes)
+                console.log(response)
             })
             .catch(err => console.log(err));
     }
