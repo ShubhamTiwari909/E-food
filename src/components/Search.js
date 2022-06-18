@@ -13,7 +13,7 @@ function Search() {
     }
     const searchNews = () => {
         setTopic(search)
-        axios.get(`https://api.spoonacular.com/recipes/random?query=${topic}&addRecipeInformation=true&addRecipeNutrition=true&number=100&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0`)
+        axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${topic}&addRecipeInformation=true&addRecipeNutrition=true&number=100&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0`)
             .then(response => {
                 setNewsData(response.data.recipes)
                 console.log(response)
