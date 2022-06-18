@@ -1,6 +1,6 @@
 import React from "react";
 import { GiHamburgerMenu } from 'react-icons/gi'
-import {SiGooglenews} from 'react-icons/si'
+import {MdOutlineFastfood} from 'react-icons/md'
 import { Routes, Route, NavLink } from 'react-router-dom'
 import RandomRecipes from './RandomRecipes'
 import Search from './Search'
@@ -11,13 +11,13 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-gray-700 via-gray-900 to-black mb-3">
+      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-3">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <div
               className="grid grid-cols-2 place-items-center lg:text-xl font-bold leading-relaxed mr-4 py-2 whitespace-nowrap text-white"
             >
-             E-Recipe <SiGooglenews size="2rem" color="#7FFFD4" />
+             E-Recipe <MdOutlineFastfood size="2rem" color="#7FFFD4" />
             </div>
             <button
               className="text-slate-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-slate-100 block lg:hidden outline-none focus:outline-none"

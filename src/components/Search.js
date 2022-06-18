@@ -28,7 +28,7 @@ function Search() {
                 <button onClick={searchNews}><FcSearch size="2rem" color="blue" /></button>
             </div>
             <div className="text-xs flex justify-center mt-3 mb-8">
-                Double click the search icon to search the news!!
+                Double click the search icon to search the food item!!
             </div>
             <div>
                 <DataView dataView={newsData} />
