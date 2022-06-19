@@ -5,7 +5,7 @@ import './Waaducss.css'
 function Headlines() {
     const [recipes, setRecipes] = useState([]);
     useEffect(() => {
-        axios.get("https://api.spoonacular.com/recipes/random?number=4&addRecipeNutrition=true&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0")
+        axios.get("https://api.spoonacular.com/recipes/random?number=50&addRecipeNutrition=true&apiKey=3dc7df0bfb72463ba27f29bebaf5edf0")
             .then(response => {
                 setRecipes(response.data.recipes)
                 console.log(response.data.recipes)
