@@ -1,6 +1,6 @@
 import React from "react";
 import { GiHamburgerMenu } from 'react-icons/gi'
-import {MdOutlineFastfood} from 'react-icons/md'
+import { MdOutlineFastfood } from 'react-icons/md'
 import { Routes, Route, NavLink } from 'react-router-dom'
 import RandomRecipes from './RandomRecipes'
 import Search from './Search'
@@ -17,7 +17,7 @@ export default function Navbar() {
             <div
               className="grid grid-cols-2 place-items-center lg:text-xl font-bold leading-relaxed mr-4 py-2 whitespace-nowrap text-white"
             >
-             E-Recipe <MdOutlineFastfood size="2rem" color="#7FFFD4" />
+              E-Recipe <MdOutlineFastfood size="2rem" color="#7FFFD4" />
             </div>
             <button
               className="text-slate-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-slate-100 block lg:hidden outline-none focus:outline-none"
@@ -37,28 +37,31 @@ export default function Navbar() {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
                 <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <NavLink to="/"  onClick={() => setNavbarOpen(!navbarOpen)}>Home</NavLink>
+                  <NavLink to="/" onClick={() => setNavbarOpen(!navbarOpen)}>Home</NavLink>
                 </p>
               </li>
               <li className="nav-item">
                 <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <NavLink to="/search"  onClick={() => setNavbarOpen(!navbarOpen)}>Search Food</NavLink>
+                  <NavLink to="/search" onClick={() => setNavbarOpen(!navbarOpen)}>Search Food</NavLink>
                 </p>
               </li>
               <li className="nav-item">
                 <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <NavLink to="/about"  onClick={() => setNavbarOpen(!navbarOpen)}>About</NavLink>
+                  <NavLink to="/about" onClick={() => setNavbarOpen(!navbarOpen)}>About</NavLink>
                 </p>
               </li>
               <li className="nav-item">
                 <p className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <NavLink to="/contact"  onClick={() => setNavbarOpen(!navbarOpen)}>Contact</NavLink>
+                  <NavLink to="/contact" onClick={() => setNavbarOpen(!navbarOpen)}>Contact</NavLink>
                 </p>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+
+     
+      
       <div>
         <Routes>
           <Route path="/" element={<RandomRecipes />} />
