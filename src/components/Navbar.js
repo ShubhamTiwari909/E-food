@@ -1,6 +1,7 @@
 import React from "react";
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { MdOutlineFastfood } from 'react-icons/md'
+import { FaArrowCircleUp } from 'react-icons/fa';
 import { Routes, Route, NavLink } from 'react-router-dom'
 import RandomRecipes from './RandomRecipes'
 import Search from './Search'
@@ -9,6 +10,14 @@ import About from './About'
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+      /* you can also use 'auto' behaviour
+         in place of 'smooth' */
+    });
+  };
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-3">
@@ -59,9 +68,9 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-
-     
-      
+      <div>
+        <button className="fixed bottom-0 right-0 mr-5 my-10 hover:animate-pulse"><FaArrowCircleUp color="indigo" size="2rem" onClick={scrollToTop} /></button>
+      </div>
       <div>
         <Routes>
           <Route path="/" element={<RandomRecipes />} />

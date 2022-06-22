@@ -14,7 +14,7 @@ function Header() {
     window.addEventListener("scroll", changeOnScroll , false);
     return (
         <div>
-            <div className={`flex justify-content-center my-3 h-60 ${opacity}`}>
+            <div className={`flex justify-content-center my-10 h-60 ${opacity}`}>
                 <Carousel>
                     <Carousel.Item>
                         <img
