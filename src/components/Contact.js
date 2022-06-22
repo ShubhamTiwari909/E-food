@@ -12,7 +12,7 @@ const Contact = () => {
     <div className='grid place-content-center pt-10 pb-20'>
       <div className=" w-blue-claymorphism">
         <Pulse>
-          <h1 className="text-2xl py-3 text-center">Home News</h1>
+          <h1 className="text-2xl py-3 text-center">E-Recipe</h1>
           <h1 className="text-xl py-3 postTitle">SOCIAL MEDIA LINKS </h1>
 
           <div

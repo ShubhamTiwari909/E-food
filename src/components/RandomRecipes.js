@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Header from './Header'
 import DataView from './Data'
-import axios from 'axios'
 import './Waaducss.css'
 function Headlines() {
     const [recipes, setRecipes] = useState([]);
@@ -18,8 +18,10 @@ function Headlines() {
     return (
         <div>
             <Header />
+
             <h1 className="text-center text-3xl font-bold my-6 w-gradient-text w-bluepurple-gradient">Trending</h1>
             <DataView dataView={recipes} setRecipes={setRecipes} />
+
         </div>
     )
 }
