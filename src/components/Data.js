@@ -10,7 +10,6 @@ function Data(props) {
                     return (
                         <MotionAnimate
                             key={result.id}
-                            animation='scrollOpacity'
                             reset={true}
                             distance={200}
                             delay={1}
@@ -46,7 +45,7 @@ function Data(props) {
                                     </div>
                                 </div>
 
-                                <div className="px-6 py-4 my-2">
+                                <div className="px-6 py-2">
                                     <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
                                         type="button" data-bs-toggle="collapse" data-bs-target={`#collapseSteps${result.id}`} aria-expanded="false" aria-controls="collapseExample">Steps</button>
                                     <div className="collapse my-2" id={`collapseSteps${result.id}`}>
